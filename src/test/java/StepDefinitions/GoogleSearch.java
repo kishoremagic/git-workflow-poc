@@ -20,22 +20,9 @@ public class GoogleSearch {
 	public GoogleSearch(BaseClass base)
     {
         this.base = base;
-        //loginPage = context.getLoginPage();
-        //loginPage = new LoginPage(base.driver);
-
         driver = base.driver;
-        System.out.println("In 1st const : "+base.driver);
+	    System.out.println("In 1st const : "+base.driver);
     }
-	
-	
-	   // PicoContainer injects class ContextSteps
-//	   public LoginPageValidation (ContextSteps context) {
-//		   System.out.println("In Login Page Validation Constructor");
-//		   System.out.println(context.getDriver());
-//	      //this.context = context;
-//	      driver = context.getDriver();
-//	      System.out.println(driver);
-//	   }
 	
 	@Given("Google is loaded")
 	public void google_is_loaded() {

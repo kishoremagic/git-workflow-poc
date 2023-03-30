@@ -17,6 +17,7 @@ public static WebDriver driver;
 		if(driver==null)
 		{
 			System.out.println("In Base const : ");
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			System.out.println(driver);
 		}
