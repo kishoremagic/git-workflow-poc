@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.github.bonigarcia.WebDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class BaseClass {
