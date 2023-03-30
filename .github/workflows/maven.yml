@@ -22,7 +22,7 @@ jobs:
         nohup java -jar selenium-server-standalone-3.141.59.jar > /dev/null 2>&1 &
 
      - name: Run Selenium tests
-       run: mvn clean test -Dtest=TestSuite
+       run: mvn clean test
 
      - name: Stop Selenium server
        run: curl -X POST http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer
