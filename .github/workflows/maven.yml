@@ -25,14 +25,6 @@ jobs:
         sudo apt-get update
         sudo apt-get install google-chrome-stable -y
         
-    - name: Download and update Chromedriver
-      run: |
-        LATEST_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-        curl -L https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip --output chromedriver.zip
-        unzip chromedriver.zip
-        chmod +x chromedriver
-        sudo mv chromedriver /usr/local/bin/chromedriver    
-
     - name: Start Selenium server
       run: |
         nohup Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
