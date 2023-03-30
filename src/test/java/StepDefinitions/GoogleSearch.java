@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import Pages.LoginPage;
-import Utils.Context;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
@@ -17,7 +16,6 @@ public class GoogleSearch {
 	
 	WebDriver driver;
 	LoginPage loginPage = new LoginPage();
-	Context context;
 	BaseClass base;
 	public GoogleSearch(BaseClass base)
     {

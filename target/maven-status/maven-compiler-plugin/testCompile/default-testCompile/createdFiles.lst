@@ -1,6 +1,5 @@
 StepDefinitions\LoginPageValidation.class
 Pages\DashboardPage.class
-Utils\Context.class
 StepDefinitions\TestRunner.class
 Pages\LoginPage.class
 StepDefinitions\LoginSteps.class
