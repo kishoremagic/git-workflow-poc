@@ -16,7 +16,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        uses: maven/maven-setup-action@v6
+        run: mvn clean compile
       - name: Test with Selenium
         run: mvn test
         env:
