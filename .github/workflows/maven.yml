@@ -16,13 +16,6 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Set up Maven
-      uses: vishnubob/wait-for-it@master
-      with:
-        command: |
-          sudo apt-get update
-          sudo apt-get install -y maven
-
     - name: Install Chrome
       run: |
         wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -30,9 +23,23 @@ jobs:
         sudo apt-get update
         sudo apt-get install google-chrome-stable -y
 
-    - name: Install Selenium
+    - name: Install ChromeDriver
       run: |
-        mvn dependency:get -Dartifact=org.seleniumhq.selenium:selenium-java:3.141.59 -Dtransitive=false
+        LATEST=`curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
+        wget https://chromedriver.storage.googleapis.com/${LATEST}/chromedriver_linux64.zip
+        unzip chromedriver_linux64.zip
+        chmod +x chromedriver
+        sudo mv chromedriver /usr/local/bin/
+
+    - name: Install Maven
+      run: sudo apt-get install maven -y
+
+    - name: Start Selenium server
+      run: |
+        nohup Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+        export DISPLAY=:99
+        wget https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
+        nohup java -jar selenium-server-standalone-3.141.59.jar > /dev/null 2>&1 &
 
     - name: Run tests and generate Allure report
       run: |
