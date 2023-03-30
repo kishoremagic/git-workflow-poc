@@ -23,14 +23,6 @@ jobs:
         sudo apt-get update
         sudo apt-get install google-chrome-stable -y
 
-    - name: Install ChromeDriver
-      run: |
-        LATEST=`curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
-        wget https://chromedriver.storage.googleapis.com/${LATEST}/chromedriver_linux64.zip
-        unzip chromedriver_linux64.zip
-        chmod +x chromedriver
-        sudo mv chromedriver /usr/local/bin/
-
     - name: Install Maven
       run: sudo apt-get install maven -y
 
@@ -41,8 +33,16 @@ jobs:
         wget https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
         nohup java -jar selenium-server-standalone-3.141.59.jar > /dev/null 2>&1 &
 
-    - name: Run Selenium tests
-      run: mvn clean test
+    - name: Run tests and generate Allure report
+      run: |
+        mvn clean test
+        mvn io.qameta.allure:allure-maven:2.10.0:report
+
+    - name: Upload Allure report
+      uses: actions/upload-artifact@v2
+      with:
+        name: allure-report
+        path: target/site/allure-maven/index.html
 
     - name: Stop Selenium server
       run: curl -X POST http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer
