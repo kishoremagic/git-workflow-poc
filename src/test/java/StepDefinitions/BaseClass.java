@@ -21,9 +21,9 @@ public static WebDriver driver;
 			System.out.println("In Base const : ");
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
-			options.addArgument("--disable-dev-shm-usage");
-			options.addArgument("--ignore-ssl-errors=yes");
-			options.addArgument("--ignore-certificate-errors");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--ignore-ssl-errors=yes");
+			options.addArguments("--ignore-certificate-errors");
 			driver = new ChromeDriver(options);
 			System.out.println(driver);
 		}
