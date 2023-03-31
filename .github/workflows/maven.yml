@@ -24,6 +24,12 @@ jobs:
         sudo dpkg -i google-chrome-stable_110.0.5481.96-1_amd64.deb
         sudo apt-get install google-chrome-stable -y
         sudo dpkg-query -l '*google-chrome*'
+    - name: Start Selenium server
+      run: |
+        nohup Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+        export DISPLAY=:99
+        wget https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.8.0/selenium-server-4.8.3.jar
+        nohup java -jar selenium-server-4.8.3.jar standalone > /dev/null 2>&1 &
 
     - name: Run tests and generate Allure report
       run: |
