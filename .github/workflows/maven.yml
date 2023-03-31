@@ -21,9 +21,8 @@ jobs:
       
     - name: Install Chrome
       run:  |
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo dpkg -i google-chrome-stable_current_amd64.deb
-        sudo apt-get install -f
+        wget http://dl.google.com/linux/deb/pool/main/g/google-chrome-unstable/google-chrome-unstable_73.0.3679.0-1_amd64.deb
+        sudo apt-get install -f ./google-chrome-unstable_73.0.3679.0-1_amd64.deb
         google-chrome-stable --version
         
     - name: Start Selenium server
