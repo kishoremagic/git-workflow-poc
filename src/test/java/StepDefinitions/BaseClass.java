@@ -19,7 +19,11 @@ public static WebDriver driver;
 		{
 			System.out.println("In Base const : ");
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.add_argument('--disable-dev-shm-usage');
+			options.add_argument('--ignore-ssl-errors=yes');
+			options.add_argument('--ignore-certificate-errors');
+			driver = new ChromeDriver(options);
 			System.out.println(driver);
 		}
 	}
