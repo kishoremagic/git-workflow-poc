@@ -19,12 +19,13 @@ public static WebDriver driver;
 		if(driver==null)
 		{
 			System.out.println("In Base const : ");
-			WebDriverManager.chromedriver().setup();
-			//ChromeOptions options = new ChromeOptions();
+			//WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.setHeadless(true);
 			//options.addArguments("--disable-dev-shm-usage");
 			//options.addArguments("--ignore-ssl-errors=yes");
 			//options.addArguments("--ignore-certificate-errors");
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(options);
 			System.out.println(driver);
 		}
 	}
