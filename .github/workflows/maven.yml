@@ -23,7 +23,7 @@ jobs:
       env:
         CHROME_BIN: /usr/bin/google-chrome
       run: |
-        apt-add-repository ppa:qameta/allure && apt-get -y update && apt-get -y install allure
+        sudo apt-add-repository ppa:qameta/allure && apt-get -y update && apt-get -y install allure
         mvn clean test -Dwebdriver.chrome.driver=chromedriver
         allure generate
       
