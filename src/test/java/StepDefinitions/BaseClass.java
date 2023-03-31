@@ -19,7 +19,7 @@ public static WebDriver driver;
 		if(driver==null)
 		{
 			System.out.println("In Base const : ");
-			//WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.setHeadless(true);
 			//options.addArguments("--disable-dev-shm-usage");
