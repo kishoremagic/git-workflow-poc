@@ -23,6 +23,13 @@ jobs:
       uses: nanasess/setup-chromedriver@v1
       with:
         chromedriver-version: '93.0.4577.63'
+        
+    - name: Start Selenium server
+      run: |
+        nohup Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+        export DISPLAY=:99
+        wget https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.8.0/selenium-server-4.8.3.jar
+        nohup java -jar selenium-server-4.8.3.jar > /dev/null 2>&1 &
 
     - name: Run tests and generate Allure report
       run: |
