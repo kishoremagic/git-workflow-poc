@@ -21,7 +21,7 @@ public static WebDriver driver;
 			System.out.println("In Base const : ");
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
-			//options.setHeadless(true);
+			options.setHeadless(true);
 			driver = new ChromeDriver(options);
 			System.out.println(driver);
 		}
