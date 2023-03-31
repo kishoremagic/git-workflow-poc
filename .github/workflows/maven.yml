@@ -32,11 +32,7 @@ jobs:
       with:
         name: allure-report
         path: target/site/allure-maven-plugin/
-        
-    - name: Deploy report to Github Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-          PERSONAL_TOKEN: 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
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history
+    - name: allure-html-reporter-github-pages
+    # You may pin to the exact commit or the version.
+    # uses: PavanMudigonda/allure-html-reporter-github-pages@494af460cf5d0c0a0a4e48f800fc3fe48891cf21
+      uses: PavanMudigonda/allure-html-reporter-github-pages@v1.2
