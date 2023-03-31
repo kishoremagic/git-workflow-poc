@@ -23,8 +23,9 @@ jobs:
       env:
         CHROME_BIN: /usr/bin/google-chrome
       run: |
+        apt-add-repository ppa:qameta/allure && apt-get -y update && apt-get -y install allure
         mvn clean test -Dwebdriver.chrome.driver=chromedriver
-        mvn io.qameta.allure:allure-maven:2.10.0:report
+        allure generate
       
     - name: Upload Allure report
       uses: actions/upload-artifact@v2
