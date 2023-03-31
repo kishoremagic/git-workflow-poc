@@ -19,10 +19,11 @@ jobs:
     - name: Install Maven
       run: sudo apt-get install maven -y
             
-    - name: Setup Chrome driver
-      uses: nanasess/setup-chromedriver@v1
-      with:
-        chromedriver-version: '93.0.4577.63'
+    - name: Install Chrome
+      run: |
+        wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_110.0.5481.178_amd64.deb
+        sudo apt-get update
+        sudo apt-get install google-chrome-stable -y
         
     - name: Start Selenium server
       run: |
