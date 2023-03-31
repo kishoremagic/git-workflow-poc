@@ -18,13 +18,14 @@ jobs:
         distribution: 'adopt'
     - name: Install Maven
       run: sudo apt-get install maven -y
-            
-    - name: Install Chrome
-      run: |
-        wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_110.0.5481.178_amd64.deb
-        sudo apt-get update
-        sudo apt-get install google-chrome-stable -y
-        
+    - name: Setup Chrome
+      # You may pin to the exact commit or the version.
+      # uses: browser-actions/setup-chrome@c485fa3bab6be59dce18dbc18ef6ab7cbc8ff5f1
+      uses: browser-actions/setup-chrome@v1.2.0
+      with:
+        # The Google Chrome/Chromium version to install and use.
+        chrome-version: 110.0.5481.178 # optional, default is latest
+   
     - name: Start Selenium server
       run: |
         nohup Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
