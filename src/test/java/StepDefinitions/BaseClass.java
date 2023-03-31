@@ -24,8 +24,8 @@ public static WebDriver driver;
 			//options.addArguments("--disable-dev-shm-usage");
 			//options.addArguments("--ignore-ssl-errors=yes");
 			//options.addArguments("--ignore-certificate-errors");
-			driver = new ChromeDriver();
-			System.out.println(driver);
+			//driver = new ChromeDriver();
+			//System.out.println(driver);
 		}
 	}
 	
