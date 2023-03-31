@@ -41,6 +41,3 @@ jobs:
       with:
         name: allure-report
         path: target/site/allure-maven/index.html
-
-    - name: Stop Selenium server
-      run: curl -X POST http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer
