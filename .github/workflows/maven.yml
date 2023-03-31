@@ -24,7 +24,7 @@ jobs:
         echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
         echo "sudo cat /etc/apt/sources.list.d/google-chrome.list"
         sudo apt-get update
-        sudo apt-get install google-chrome-stable -y
+        sudo apt-get install google-chrome-stable_110.0.5481.178-1 -y
         echo "sudo dpkg-query -l '*google-chrome*'"
    
     - name: Start Selenium server
