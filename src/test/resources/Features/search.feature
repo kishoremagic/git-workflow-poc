@@ -2,4 +2,4 @@ Feature: Google Automation
 
   Scenario: Google search
     Given Google is loaded
-    Then Search for Petcover
+    Then Search for petcover
