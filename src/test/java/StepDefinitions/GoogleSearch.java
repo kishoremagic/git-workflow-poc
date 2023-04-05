@@ -34,10 +34,10 @@ public class GoogleSearch {
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 	}
 	
-	@Then("Search for iselect")
-	public void search_for_iselect() {
+	@Then("Search for petcover")
+	public void search_for_petcover() {
 		System.out.println("Inside Step - Language is en-GB");
-		driver.findElement(loginPage.getsearchBox()).sendKeys("iselect");
+		driver.findElement(loginPage.getsearchBox()).sendKeys("petcover");
 		driver.quit();
 	}
 }
