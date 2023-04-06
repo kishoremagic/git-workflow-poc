@@ -1,9 +1,9 @@
 name: Java CI with Maven test
 on:
   push:
-    branches: [ main ]
+    branches: [ main, test_allure ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, test_allure ]
 jobs:
   build:
     runs-on: ubuntu-latest
