@@ -1,0 +1,3 @@
+"Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+"","Test Login functionality","Check login is successful with valid credentials","0","0","1","0","0"
+"","Google Automation","Google search","0","1","1","0","0"
