@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"10bec42eda8ad880deb6d10d4dd0b6c9","name":"Google Automation","statistic":{"failed":0,"broken":1,"skipped":0,"passed":1,"unknown":0,"total":2}},{"uid":"733e1344a5f5a34bc14d19ed0793e957","name":"Test Login functionality","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
