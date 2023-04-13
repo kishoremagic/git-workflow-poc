@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Apr 13 11:10:07 GMT 2023","Thu Apr 13 11:10:11 GMT 2023","3272","","Google Automation","","Google search","","Google search",""
+"broken","Wed Mar 29 12:31:03 GMT 2023","Wed Mar 29 12:31:21 GMT 2023","17686","","Google Automation","","Google search","","Google search",""
+"passed","Wed Mar 29 12:08:11 GMT 2023","Wed Mar 29 12:08:41 GMT 2023","30300","","Test Login functionality","","Check login is successful with valid credentials","","Check login is successful with valid credentials",""
