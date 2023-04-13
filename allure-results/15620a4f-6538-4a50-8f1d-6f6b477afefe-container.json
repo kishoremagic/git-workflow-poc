@@ -1,1 +1,0 @@
-{"uuid":"15620a4f-6538-4a50-8f1d-6f6b477afefe","name":"Scenario: Google search","children":["c166a000-89c6-425a-98b9-43fd574f6e25"],"befores":[{"name":"StepDefinitions.BaseClass.setup()","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1680093847364,"stop":1680093867509}],"afters":[],"start":1680093847356,"stop":1680093887028}
